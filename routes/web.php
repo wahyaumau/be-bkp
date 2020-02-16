@@ -64,6 +64,7 @@ $router->group(['prefix' => 'api'], function () use ($router) {
         $router->put('/update', [
             'as' => 'api.mahasiswa.update', 'uses' => 'MahasiswaController@update'
         ]);
+        $router->post('/konseling/store', 'KonselingController@store');
         $router->get('/konseling', [
             'as' => 'api.mahasiswa.konseling', 'uses' => 'KonselingController@konseling'
         ]);
