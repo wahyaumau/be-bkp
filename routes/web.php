@@ -24,6 +24,14 @@ $router->group(['prefix' => 'api'], function () use ($router) {
     ]);
 
     $router->group(['prefix' => 'admin'], function () use ($router) {
+        $router->group(['prefix' => 'posts'], function () use ($router) {
+            $router->get('/', 'PostController@get');
+            $router->get('/all', 'PostController@getAll');
+            $router->post('/store', 'PostController@store');
+            $router->put('/update', 'PostController@update');
+            $router->post('/delete', 'PostController@delete');
+        });
+
         $router->get('user/', 'AdminController@getSingleUser');
         $router->get('user/all', 'AdminController@getAllUser');
         $router->post('mahasiswa/store', [
