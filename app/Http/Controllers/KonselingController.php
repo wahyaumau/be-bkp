@@ -54,7 +54,7 @@ class KonselingController extends Controller
         ]);
         try{
             $konseling = array();
-            $konseling = Konseling::all()->where('mhs_id',$request->mhs_id);
+            $konseling = Konseling::where('mhs_id',$request->mhs_id);
             return $this->apiResponse(200, 'success', ['konseling' => $konseling]);
         }catch (\Exception $e) {
             return $this->apiResponse(201, $e->getMessage(), null);
@@ -73,7 +73,7 @@ class KonselingController extends Controller
     public function store(Request $request){
         $this->validate($request, [            
             'konselor_id' => 'required|integer',
-            // 'waktu_mulai' => 'required|time',
+            'waktu_mulai' => 'required|date_format:Y-m-d H:i:s|after:now',
             'deskripsi' => 'required|string',
             'tempat' => 'required|string',
         ]);
