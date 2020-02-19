@@ -24,7 +24,7 @@ class CreateKonselingTable extends Migration
             // Tujuan Konseling
             $table->dateTime('waktu_mulai')->nullable();
             $table->dateTime('waktu_selesai')->nullable();
-            $table->string('deskripsi', 30)->nullable();
+            $table->text('deskripsi')->nullable();
             $table->string('tempat', 30)->nullable();
             $table->text('keterangan')->nullable();
             // Status

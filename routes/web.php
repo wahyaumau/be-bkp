@@ -54,12 +54,6 @@ $router->group(['prefix' => 'api'], function () use ($router) {
         ]);
     });
 
-    // $router->group(['prefix' => 'mahasiswa'], function () use ($router) {
-    //     $router->get('/konselor', [
-    //         'as' => 'api.user.profile', 'uses' => 'UserController@profile'
-    //     ]);
-    // });
-
     $router->group(['prefix' => 'mahasiswa'], function () use ($router) {
         $router->put('/update', [
             'as' => 'api.mahasiswa.update', 'uses' => 'MahasiswaController@update'
@@ -83,9 +77,20 @@ $router->group(['prefix' => 'api'], function () use ($router) {
         $router->get('/next', [
             'as' => 'api.konseling.next', 'uses' => 'KonselingController@getKonselingMendatang'
         ]);
-        $router->post('/mhs', [
-            'as' => 'api.konseling.mhs', 'uses' => 'KonselingController@getOneByMhs'
+        $router->post('/mahasiswa', [
+            'as' => 'api.konseling.mahasiswa', 'uses' => 'KonselingController@getOneByMahasiswa'
         ]);
+        $router->post('/konselor', [
+            'as' => 'api.konseling.konselor', 'uses' => 'KonselingController@getOneByKonselor'
+        ]);
+
+        $router->put('/updatebymahasiswa', [
+            'as' => 'api.konseling.updateByMahasiswa', 'uses' => 'KonselingController@updateByMahasiswa'
+        ]);
+        $router->put('/updatebykonselor', [
+            'as' => 'api.konseling.updateByKonselor', 'uses' => 'KonselingController@updateByKonselor'
+        ]);
+
     });
 
 
