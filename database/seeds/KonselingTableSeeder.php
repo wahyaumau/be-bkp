@@ -21,7 +21,7 @@ class KonselingTableSeeder extends Seeder
           'tempat' => 'Ruang BKP'],
 
           ['mhs_id' => 1,
-          'konselor_id' => 1,
+          'konselor_id' => 2,
           'waktu_mulai' => '2019-12-28 08:30:00',
           'waktu_selesai' => '2019-12-28 09:30:00',
           'deskripsi' => 'Membutuhkan motivasi lagi',
